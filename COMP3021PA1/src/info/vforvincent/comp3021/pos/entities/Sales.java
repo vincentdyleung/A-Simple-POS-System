@@ -10,7 +10,7 @@ public class Sales {
 	private String mFullID;
 	
 	public Sales(ArrayList<Order> orders) {
-		mFullID = "SalesID" + padID();
+		mFullID = "SalesID" + pad(mID++);
 		mOrders = orders;
 	}
 	
@@ -43,11 +43,11 @@ public class Sales {
 		return mPayment - getTotal();
 	}
 
-	private String padID() {
-		if (mID < 10) {
-			return "0" + Integer.toString(mID);
+	private String pad(int i) {
+		if (i < 10) {
+			return "0" + Integer.toString(i);
 		} else {
-			return Integer.toString(mID);
+			return Integer.toString(i);
 		}
 	}
 }
