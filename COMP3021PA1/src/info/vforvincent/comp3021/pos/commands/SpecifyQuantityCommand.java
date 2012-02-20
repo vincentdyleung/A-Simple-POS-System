@@ -15,6 +15,7 @@ public class SpecifyQuantityCommand extends Command {
 	
 	@Override
 	public void validateInput(Scanner scan) {
+
 		
 	}
 

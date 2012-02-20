@@ -60,7 +60,7 @@ public class FileInstruction implements InstructionMode {
 				addProduct.readInput(input);
 				if (!mProducts.contains(addProduct.getInput()) && !addProduct.getInput().equals("c")) {
 					logger.add("Incorrect product ID");
-					return;
+					System.exit(-1);
 				}
 			
 				while (!addProduct.getInput().equals("c")) {	
@@ -69,7 +69,12 @@ public class FileInstruction implements InstructionMode {
 					SpecifyQuantityCommand specifyQuantity = new SpecifyQuantityCommand(mProducts, logger, productName);
 					specifyQuantity.showPrompt();
 					specifyQuantity.readInput(input);
-					specifyQuantity.validateInput(input);
+					try {
+						Integer.parseInt(specifyQuantity.getInput());
+					} catch (NumberFormatException e) {
+						logger.add("Incorrect number");
+						System.exit(-1);
+					}
 					int quantity = Integer.valueOf(specifyQuantity.getInput());
 					Order order = new Order(product, quantity);
 					orderBuffer.add(order);
@@ -78,7 +83,7 @@ public class FileInstruction implements InstructionMode {
 					addProduct.readInput(input);
 					if (!mProducts.contains(addProduct.getInput()) && !addProduct.getInput().equals("c")) {
 						logger.add("Incorrect product ID");
-						return;
+						System.exit(-1);
 					}
 				} 
 			
@@ -97,16 +102,16 @@ public class FileInstruction implements InstructionMode {
 				payment.readInput(input);
 				payment.validateInput(input);
 				double pay = Double.valueOf(payment.getInput());
-				while (!mSales.setPayment(pay)) {
-					System.out.print("Sorry, cash not enough, please enter cash amount again: ");
-					pay = Double.valueOf(input.nextLine());
+				if (!mSales.setPayment(pay)) {
+					logger.add("Cash not enough!");
+					System.exit(-1);
 				}
 				System.out.println("Change $: " + mSales.getChange());
 				choice.showPrompt();
 				choice.readInput(input);
 				if (!choice.getInput().equals("1") && !choice.getInput().equals("2")) {
 					logger.add("Invalid input");
-					return;
+					System.exit(-1);
 				}
 			}
 		}
