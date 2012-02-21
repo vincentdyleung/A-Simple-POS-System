@@ -1,6 +1,6 @@
 package info.vforvincent.comp3021.pos.entities;
 
-public class User {
+public class User extends Entity {
 	private String mName;
 	private String mPassword;
 	

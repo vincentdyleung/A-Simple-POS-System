@@ -1,12 +1,26 @@
 package info.vforvincent.comp3021.pos.storage;
 
+import info.vforvincent.comp3021.pos.entities.Entity;
+
 import java.util.HashMap;
 
-public interface Storage {
+public abstract class Storage {
 	
-	public boolean contains(Object key);
+	protected HashMap<String, Entity> mEntities;
 	
-	public void add(Object value);
+	public Storage () {
+		mEntities = new HashMap<String, Entity>();
+	}
 	
-	public Object get(Object key);
+	public boolean contains(String key) {
+		return false;
+	}
+	
+	public void add(Entity value) {
+		
+	}
+	
+	public Entity get(String key) {
+		return null;
+	}
 }

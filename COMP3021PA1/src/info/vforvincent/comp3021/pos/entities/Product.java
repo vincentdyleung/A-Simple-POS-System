@@ -1,6 +1,6 @@
 package info.vforvincent.comp3021.pos.entities;
 
-public class Product {
+public class Product extends Entity{
 	
 	private String mID;
 	private String mName;

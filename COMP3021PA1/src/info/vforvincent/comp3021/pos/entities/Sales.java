@@ -2,7 +2,7 @@ package info.vforvincent.comp3021.pos.entities;
 
 import java.util.ArrayList;
 
-public class Sales {
+public class Sales extends Entity {
 	
 	private ArrayList<Order> mOrders;
 	private double mPayment = 0.0;

@@ -1,6 +1,6 @@
 package info.vforvincent.comp3021.pos.entities;
 
-public class Order {
+public class Order extends Entity {
 	
 	private Product mProduct;
 	private int mQuantity;
