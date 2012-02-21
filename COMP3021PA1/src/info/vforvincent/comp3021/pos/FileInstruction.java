@@ -116,7 +116,6 @@ public class FileInstruction implements InstructionMode {
 			}
 		}
 		logger.add("User " + username + " has successfully logged off!");
-		printSeparateLine();
 		System.out.println();
 	}
 	
