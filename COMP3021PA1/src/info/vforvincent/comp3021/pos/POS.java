@@ -35,9 +35,6 @@ public class POS {
 			}
 		}
 		
-
-		while (true) {
-			execute.getMode().process(mUsers, mProducts, input, logger, mSales);
-		}
+		execute.getMode().process(mUsers, mProducts, input, logger, mSales);
 	}
 }
