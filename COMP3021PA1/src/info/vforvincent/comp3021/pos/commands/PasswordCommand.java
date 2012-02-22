@@ -3,7 +3,6 @@ package info.vforvincent.comp3021.pos.commands;
 import java.util.Scanner;
 
 import info.vforvincent.comp3021.pos.Log;
-import info.vforvincent.comp3021.pos.entities.User;
 import info.vforvincent.comp3021.pos.storage.Storage;
 
 public class PasswordCommand extends Command {
@@ -16,7 +15,7 @@ public class PasswordCommand extends Command {
 	}
 	
 	public void validateInput(Scanner scan, String username) {
-		String pass = ((User) mStorage.get(username)).getPassword();
+		String pass = mStorage.get(username).getPassword();
 		while (!input.equals(pass)) {
 			addLog(username);
 			showPrompt();

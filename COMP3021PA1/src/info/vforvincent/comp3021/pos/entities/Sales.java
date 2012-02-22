@@ -1,5 +1,6 @@
 package info.vforvincent.comp3021.pos.entities;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Sales extends Entity {
@@ -27,7 +28,8 @@ public class Sales extends Entity {
 		for (Order order : mOrders) {
 			total += order.getTotal();
 		}
-		return total;
+		DecimalFormat df = new DecimalFormat("##.0");
+		return Double.valueOf(df.format(total));
 	}
 	
 	public boolean setPayment(double payment) {
@@ -52,7 +54,9 @@ public class Sales extends Entity {
 	}
 	
 	public double getChange() {
-		return mPayment - getTotal();
+		double change = mPayment - getTotal();
+		DecimalFormat df = new DecimalFormat("##.0");
+		return Double.valueOf(df.format(change));
 	}
 
 	private String pad(int i) {

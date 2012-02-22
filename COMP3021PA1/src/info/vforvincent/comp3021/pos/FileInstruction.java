@@ -9,7 +9,6 @@ import info.vforvincent.comp3021.pos.commands.SpecifyQuantityCommand;
 import info.vforvincent.comp3021.pos.entities.Order;
 import info.vforvincent.comp3021.pos.entities.Product;
 import info.vforvincent.comp3021.pos.entities.Sales;
-import info.vforvincent.comp3021.pos.entities.User;
 import info.vforvincent.comp3021.pos.storage.ProductStorage;
 import info.vforvincent.comp3021.pos.storage.UserStorage;
 

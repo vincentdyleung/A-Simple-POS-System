@@ -1,6 +1,6 @@
 package info.vforvincent.comp3021.pos.entities;
 
-public class Entity {
+public abstract class Entity {
 	public String getName(){
 		return null;
 	}

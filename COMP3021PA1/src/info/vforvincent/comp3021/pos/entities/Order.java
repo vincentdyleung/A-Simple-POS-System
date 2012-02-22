@@ -1,5 +1,7 @@
 package info.vforvincent.comp3021.pos.entities;
 
+import java.text.DecimalFormat;
+
 public class Order extends Entity {
 	
 	private Product mProduct;
@@ -19,7 +21,9 @@ public class Order extends Entity {
 	}
 	
 	public double getTotal() {
-		return mProduct.getPrice() * mQuantity;
+		double total = mProduct.getPrice() * mQuantity;
+		DecimalFormat df = new DecimalFormat("##.0");
+		return Double.valueOf(df.format(total));
 	}
 	
 	@Override

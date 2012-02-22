@@ -5,7 +5,6 @@ import info.vforvincent.comp3021.pos.entities.User;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class UserStorage extends Storage {

@@ -17,7 +17,10 @@ public class PaymentCommand extends Command {
 	
 	@Override
 	public void validateInput(Scanner scan) {
-		
+		while (!input.matches("\\d+") && !input.matches("\\d+.\\d+")) {
+			showPrompt();
+			input = scan.nextLine();
+		}
 	}
 
 }
