@@ -39,6 +39,18 @@ public class Sales extends Entity {
 		}
 	}
 	
+	public String toString() {
+		String output =  mFullID + "\ttotal $" + Double.toString(getTotal()) + ";";
+		int length = mOrders.size();
+		for (int i = 0; i < length; i++ ) {
+			output += mOrders.get(i).getProduct().getName() + " " + mOrders.get(i).getQuantity();
+			if (i < length - 1) {
+				output += ";";
+			}
+		}
+		return output;
+	}
+	
 	public double getChange() {
 		return mPayment - getTotal();
 	}

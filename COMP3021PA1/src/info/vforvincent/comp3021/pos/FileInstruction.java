@@ -26,6 +26,7 @@ public class FileInstruction implements InstructionMode {
 		LoginCommand login = new LoginCommand(mUsers, logger);
 		login.showPrompt();
 		login.readInput(input);
+		System.out.println(login.getInput());
 		String username = login.getInput();
 		if (!mUsers.contains(username)) {
 			logger.add("Non-existent user " + username);
@@ -35,9 +36,10 @@ public class FileInstruction implements InstructionMode {
 		PasswordCommand pass = new PasswordCommand(mUsers, logger);
 		pass.showPrompt();
 		pass.readInput(input);
-		String password = ((User) mUsers.get(username)).getPassword();
+		System.out.println(pass.getInput());
+		String password = (mUsers.get(username)).getPassword();
 		if (!pass.getInput().equals(password)) {
-			logger.add("Wrong password " + pass.getInput() + " user " + username);
+			logger.add("Wrong password " + pass.getInput() + " user " + username + ", please input again!");
 			return;
 		}
 		
@@ -48,6 +50,7 @@ public class FileInstruction implements InstructionMode {
 		ContinueExitCommand choice = new ContinueExitCommand(mUsers, logger);
 		choice.showPrompt();
 		choice.readInput(input);
+		System.out.println(choice.getInput());
 		if (!choice.getInput().equals("1") && !choice.getInput().equals("2")) {
 			logger.add("Invalid input");
 			return;
@@ -58,6 +61,7 @@ public class FileInstruction implements InstructionMode {
 				ArrayList<Order> orderBuffer = new ArrayList<Order>();
 				addProduct.showPrompt();
 				addProduct.readInput(input);
+				System.out.println(addProduct.getInput());
 				if (!mProducts.contains(addProduct.getInput()) && !addProduct.getInput().equals("c")) {
 					logger.add("Incorrect product ID");
 					System.exit(-1);
@@ -69,6 +73,7 @@ public class FileInstruction implements InstructionMode {
 					SpecifyQuantityCommand specifyQuantity = new SpecifyQuantityCommand(mProducts, logger, productName);
 					specifyQuantity.showPrompt();
 					specifyQuantity.readInput(input);
+					System.out.println(specifyQuantity.getInput());
 					try {
 						Integer.parseInt(specifyQuantity.getInput());
 					} catch (NumberFormatException e) {
@@ -81,6 +86,7 @@ public class FileInstruction implements InstructionMode {
 				
 					addProduct.showPrompt();
 					addProduct.readInput(input);
+					System.out.println(addProduct.getInput());
 					if (!mProducts.contains(addProduct.getInput()) && !addProduct.getInput().equals("c")) {
 						logger.add("Incorrect product ID");
 						System.exit(-1);
@@ -100,6 +106,7 @@ public class FileInstruction implements InstructionMode {
 				PaymentCommand payment = new PaymentCommand(mProducts, logger);
 				payment.showPrompt();
 				payment.readInput(input);
+				System.out.println(payment.getInput());
 				payment.validateInput(input);
 				double pay = Double.valueOf(payment.getInput());
 				if (!mSales.setPayment(pay)) {
@@ -107,8 +114,12 @@ public class FileInstruction implements InstructionMode {
 					System.exit(-1);
 				}
 				System.out.println("Change $: " + mSales.getChange());
+				if (pay != 0) {
+					logger.add(mSales.toString());
+				}
 				choice.showPrompt();
 				choice.readInput(input);
+				System.out.println(choice.getInput());
 				if (!choice.getInput().equals("1") && !choice.getInput().equals("2")) {
 					logger.add("Invalid input");
 					System.exit(-1);

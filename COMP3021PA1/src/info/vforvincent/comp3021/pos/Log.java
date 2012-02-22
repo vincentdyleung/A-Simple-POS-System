@@ -2,7 +2,6 @@ package info.vforvincent.comp3021.pos;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.PrintWriter;
 
 public class Log {
@@ -11,7 +10,7 @@ public class Log {
 	
 	public Log(String fileName) {
 		try {
-			logWriter = new PrintWriter(new FileOutputStream(new File(fileName)));
+			logWriter = new PrintWriter(new File(fileName));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.err.println("Log File Not Found");
@@ -23,4 +22,7 @@ public class Log {
 		System.out.println("<LOG> " + message);
 	}
 
+	public PrintWriter getWriter() {
+		return logWriter;
+	}
 }

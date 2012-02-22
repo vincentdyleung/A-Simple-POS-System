@@ -8,4 +8,8 @@ public class Entity {
 	public String getID() {
 		return null;
 	}
+	
+	public String getPassword() {
+		return null;
+	}
 }
