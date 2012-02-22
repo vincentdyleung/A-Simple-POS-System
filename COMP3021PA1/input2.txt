@@ -1,5 +1,5 @@
 chunlin
-chunl
+chunlin
 1
 ID001
 1
@@ -13,6 +13,6 @@ ID002
 ID003
 4
 c
-10000
+0
 2
 

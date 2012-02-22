@@ -64,7 +64,7 @@ public class FileInstruction implements InstructionMode {
 				System.out.println(addProduct.getInput());
 				if (!mProducts.contains(addProduct.getInput()) && !addProduct.getInput().equals("c")) {
 					logger.add("Incorrect product ID");
-					System.exit(-1);
+					return;
 				}
 			
 				while (!addProduct.getInput().equals("c")) {	
@@ -78,7 +78,7 @@ public class FileInstruction implements InstructionMode {
 						Integer.parseInt(specifyQuantity.getInput());
 					} catch (NumberFormatException e) {
 						logger.add("Incorrect number");
-						System.exit(-1);
+						return;
 					}
 					int quantity = Integer.valueOf(specifyQuantity.getInput());
 					Order order = new Order(product, quantity);
@@ -89,7 +89,7 @@ public class FileInstruction implements InstructionMode {
 					System.out.println(addProduct.getInput());
 					if (!mProducts.contains(addProduct.getInput()) && !addProduct.getInput().equals("c")) {
 						logger.add("Incorrect product ID");
-						System.exit(-1);
+						return;
 					}
 				} 
 			
@@ -109,12 +109,14 @@ public class FileInstruction implements InstructionMode {
 				System.out.println(payment.getInput());
 				payment.validateInput(input);
 				double pay = Double.valueOf(payment.getInput());
-				if (!mSales.setPayment(pay)) {
-					logger.add("Cash not enough!");
-					System.exit(-1);
-				}
-				System.out.println("Change $: " + mSales.getChange());
-				if (pay != 0) {
+				if (pay == 0) {
+					logger.add(mSales.getID()+ " cancelled!");
+				} else {
+					if (!mSales.setPayment(pay)) {
+						logger.add("Cash not enough!");
+						return;
+					}
+					System.out.println("Change $: " + mSales.getChange());
 					logger.add(mSales.toString());
 				}
 				choice.showPrompt();
@@ -122,7 +124,7 @@ public class FileInstruction implements InstructionMode {
 				System.out.println(choice.getInput());
 				if (!choice.getInput().equals("1") && !choice.getInput().equals("2")) {
 					logger.add("Invalid input");
-					System.exit(-1);
+					return;
 				}
 			}
 		}

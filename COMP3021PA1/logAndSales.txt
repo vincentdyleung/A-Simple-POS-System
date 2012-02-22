@@ -1,0 +1,4 @@
+Electronic-Sales Counter is started successfully by user chunlin!
+SalesID00	total $241.0;pencil 1;basketball 2
+SalesID01 cancelled!
+User chunlin has successfully logged off!

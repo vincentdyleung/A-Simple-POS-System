@@ -87,8 +87,6 @@ public class InteractionInstruction implements InstructionMode {
 						pay = Double.valueOf(input.nextLine());
 					}
 					System.out.println("Change $: " + mSales.getChange());
-				}
-				if (pay != 0) {
 					logger.add(mSales.toString());
 				}
 				choice.showPrompt();
