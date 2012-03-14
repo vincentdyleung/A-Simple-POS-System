@@ -106,8 +106,13 @@ public class FileInstruction implements InstructionMode {
 				payment.showPrompt();
 				payment.readInput(input);
 				System.out.println(payment.getInput());
-				payment.validateInput(input);
-				double pay = Double.valueOf(payment.getInput());
+				double pay = 0.0;
+				try {
+					pay = Double.valueOf(payment.getInput());
+				} catch (NumberFormatException e) {
+					logger.add("Incorrect number");
+					return;
+				}
 				if (pay == 0) {
 					logger.add(mSales.getID()+ " cancelled!");
 				} else {

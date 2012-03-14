@@ -2,8 +2,8 @@ chunlin
 chunlin
 1
 ID001
-1
-ID002
+3
+ID003
 2
 c
 10000
@@ -13,6 +13,6 @@ ID002
 ID003
 4
 c
-10000
+10000asdf
 2
 
