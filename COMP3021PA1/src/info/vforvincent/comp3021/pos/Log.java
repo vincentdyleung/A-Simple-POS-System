@@ -19,7 +19,14 @@ public class Log {
 	
 	public void add(String message) {
 		logWriter.println(message);
-		System.out.println("<LOG> " + message);
+		System.out.println(message);
+	}
+	
+	public void add(String message, boolean displayOnConsole) {
+		logWriter.println(message);
+		if (displayOnConsole) {
+			System.out.println(message);
+		}
 	}
 
 	public PrintWriter getWriter() {

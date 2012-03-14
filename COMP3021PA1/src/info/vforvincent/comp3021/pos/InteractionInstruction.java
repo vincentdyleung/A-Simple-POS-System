@@ -42,6 +42,8 @@ public class InteractionInstruction implements InstructionMode {
 		choice.validateInput(input);
 		while (!choice.getInput().equals("2")) {
 			if (choice.getInput().equals("1")) {
+				System.out.println("Please enter a list of purchasing-product ID and number");
+				printSeparateLine();
 				AddProductCommand addProduct = new AddProductCommand(mProducts, logger);
 				ArrayList<Order> orderBuffer = new ArrayList<Order>();
 				addProduct.showPrompt();
@@ -71,7 +73,7 @@ public class InteractionInstruction implements InstructionMode {
 					System.out.println(order.toString());
 					total += order.getTotal();
 				}
-				System.out.println("The total price is $" + total);
+				System.out.println("\nThe total price is $" + total);
 				mSales = new Sales(orderBuffer);
 			
 				PaymentCommand payment = new PaymentCommand(mProducts, logger);
@@ -87,7 +89,7 @@ public class InteractionInstruction implements InstructionMode {
 						pay = Double.valueOf(input.nextLine());
 					}
 					System.out.println("Change $: " + mSales.getChange());
-					logger.add(mSales.toString());
+					logger.add(mSales.toString(), false);
 				}
 				choice.showPrompt();
 				choice.readInput(input);

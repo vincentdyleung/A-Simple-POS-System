@@ -99,7 +99,7 @@ public class FileInstruction implements InstructionMode {
 					System.out.println(order.toString());
 					total += order.getTotal();
 				}
-				System.out.println("The total price is $" + total);
+				System.out.println("\nThe total price is $" + total);
 				mSales = new Sales(orderBuffer);
 			
 				PaymentCommand payment = new PaymentCommand(mProducts, logger);
@@ -121,7 +121,7 @@ public class FileInstruction implements InstructionMode {
 						return;
 					}
 					System.out.println("Change $: " + mSales.getChange());
-					logger.add(mSales.toString());
+					logger.add(mSales.toString(), false);
 				}
 				choice.showPrompt();
 				choice.readInput(input);
