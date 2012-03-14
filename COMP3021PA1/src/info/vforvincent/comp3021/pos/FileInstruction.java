@@ -56,6 +56,8 @@ public class FileInstruction implements InstructionMode {
 		}
 		while (!choice.getInput().equals("2")) {
 			if (choice.getInput().equals("1")) {
+				System.out.println("Please enter a list of purchasing-product ID and number");
+				printSeparateLine();
 				AddProductCommand addProduct = new AddProductCommand(mProducts, logger);
 				ArrayList<Order> orderBuffer = new ArrayList<Order>();
 				addProduct.showPrompt();
