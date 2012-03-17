@@ -1,5 +1,6 @@
 package info.vforvincent.comp3021.pos.commands;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import info.vforvincent.comp3021.pos.Log;
@@ -19,7 +20,12 @@ public class PaymentCommand extends Command {
 	public void validateInput(Scanner scan) {
 		while (!input.matches("\\d+") && !input.matches("\\d+.\\d+")) {
 			showPrompt();
-			input = scan.nextLine();
+			try {
+				input = scan.nextLine();
+			} catch (NoSuchElementException e) {
+				System.exit(-1);
+			}
+			
 		}
 	}
 

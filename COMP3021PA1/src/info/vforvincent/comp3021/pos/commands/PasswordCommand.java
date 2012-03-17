@@ -1,5 +1,6 @@
 package info.vforvincent.comp3021.pos.commands;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import info.vforvincent.comp3021.pos.Log;
@@ -19,7 +20,11 @@ public class PasswordCommand extends Command {
 		while (!input.equals(pass)) {
 			addLog(username);
 			showPrompt();
-			input = scan.nextLine();
+			try {
+				input = scan.nextLine();
+			} catch (NoSuchElementException e) {
+				System.exit(-1);
+			}
 		}
 	}
 

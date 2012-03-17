@@ -22,6 +22,11 @@ public class POS {
 	private static Executor execute = new Executor();
 	
 	public static void main(String[] args) {
+		Runtime.getRuntime().addShutdownHook(new Thread() {
+			public void run() {
+				logger.getWriter().close();
+			}
+		});
 		if (args.length == 0) {
 			input = new Scanner(System.in);
 			execute.setMode(new InteractionInstruction());
@@ -36,6 +41,6 @@ public class POS {
 		}
 		
 		execute.getMode().process(mUsers, mProducts, input, logger, mSales);
-		logger.getWriter().close();
+		
 	}
 }

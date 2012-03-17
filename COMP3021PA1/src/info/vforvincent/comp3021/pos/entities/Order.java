@@ -28,6 +28,18 @@ public class Order extends Entity {
 	
 	@Override
 	public String toString() {
-		return mProduct.getName() + " * " + mQuantity + " = $" + getTotal();
+		return padSpaceToLength(mProduct.getName() + " * " + mQuantity, 16 ) + "= $" + getTotal();
+	}
+	
+	private String padSpaceToLength(String s, int length) {
+		if (s.length() >= length) {
+			return s + "\t";
+		} else {
+			StringBuilder builder = new StringBuilder(s);
+			for (int i = 0; i < length - s.length(); i++) {
+				builder.append(' ');
+			}
+			return builder.toString();
+		}
 	}
 }

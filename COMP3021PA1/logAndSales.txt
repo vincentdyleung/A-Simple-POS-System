@@ -1,5 +1,3 @@
 Electronic-Sales Counter is started successfully by user chunlin!
-SalesID00 cancelled!
-SalesID01	total $700.0;knife 5;basketball 5
-SalesID02 cancelled!
+SalesID00	total $41.8;notebook 3;notebook 4;pencil 4;disk 4
 User chunlin has successfully logged off!

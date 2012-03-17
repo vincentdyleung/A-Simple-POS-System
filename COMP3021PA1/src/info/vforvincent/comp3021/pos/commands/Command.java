@@ -3,6 +3,7 @@ package info.vforvincent.comp3021.pos.commands;
 import info.vforvincent.comp3021.pos.Log;
 import info.vforvincent.comp3021.pos.storage.Storage;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public abstract class Command implements CommandBehavior {
@@ -33,7 +34,11 @@ public abstract class Command implements CommandBehavior {
 
 	public void readInput(Scanner scan) {
 		// TODO Auto-generated method stub
-		input = scan.nextLine();
+		try {
+			input = scan.nextLine();
+		} catch (NoSuchElementException e) {
+			System.exit(-1);
+		}
 	}
 
 	public void addLog() {

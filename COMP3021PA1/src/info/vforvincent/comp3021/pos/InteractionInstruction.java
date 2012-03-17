@@ -36,6 +36,9 @@ public class InteractionInstruction implements InstructionMode {
 		printSeparateLine();
 		System.out.println("Welcome to the Electronic-Sales Counter!");
 		
+		
+		
+		
 		ContinueExitCommand choice = new ContinueExitCommand(mUsers, logger);
 		choice.showPrompt();
 		choice.readInput(input);
