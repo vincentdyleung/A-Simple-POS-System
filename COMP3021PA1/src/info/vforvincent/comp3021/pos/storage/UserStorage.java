@@ -22,6 +22,7 @@ public class UserStorage extends Storage {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.err.println("User File Not Found");
+			System.exit(-1);
 		}
 	}
 	

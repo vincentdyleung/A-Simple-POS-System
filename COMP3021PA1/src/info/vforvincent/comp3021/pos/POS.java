@@ -37,6 +37,7 @@ public class POS {
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				System.err.println("Input File Not Found");
+				System.exit(-1);
 			}
 		}
 		

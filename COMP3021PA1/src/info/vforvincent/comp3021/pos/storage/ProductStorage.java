@@ -22,6 +22,7 @@ public class ProductStorage extends Storage {
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.err.println("Product File Not Found");
+			System.exit(-1);
 		}
 	}
 	public boolean contains(String key) {
