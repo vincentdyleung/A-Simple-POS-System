@@ -1,3 +1,6 @@
 Electronic-Sales Counter is started successfully by user chunlin!
-SalesID00	total $41.8;notebook 3;notebook 4;pencil 4;disk 4
+SalesID04	total $315.4;pencil 311;notebook 2
+SalesID05	total $248.8;basketball 2;notebook 4
+User chunlin has successfully logged off!
+Electronic-Sales Counter is started successfully by user chunlin!
 User chunlin has successfully logged off!

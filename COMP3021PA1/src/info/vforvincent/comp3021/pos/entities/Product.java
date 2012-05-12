@@ -25,4 +25,10 @@ public class Product extends Entity{
 	public double getPrice() {
 		return mPrice;
 	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

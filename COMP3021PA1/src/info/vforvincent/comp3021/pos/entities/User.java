@@ -17,4 +17,10 @@ public class User extends Entity {
 	public String getPassword() {
 		return mPassword;
 	}
+
+	@Override
+	public String getID() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

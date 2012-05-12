@@ -41,10 +41,7 @@ public abstract class Command implements CommandBehavior {
 		}
 	}
 
-	public void addLog() {
-		// TODO Auto-generated method stub
-
-	}
+	public void addLog(){}
 	
 	public String getInput() {
 		return input;

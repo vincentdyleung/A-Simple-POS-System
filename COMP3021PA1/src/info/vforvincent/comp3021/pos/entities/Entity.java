@@ -1,15 +1,9 @@
 package info.vforvincent.comp3021.pos.entities;
 
 public abstract class Entity {
-	public String getName(){
-		return null;
-	}
+	public abstract String getName();
 	
-	public String getID() {
-		return null;
-	}
+	public abstract String getID(); 
 	
-	public String getPassword() {
-		return null;
-	}
+	public abstract String getPassword();
 }

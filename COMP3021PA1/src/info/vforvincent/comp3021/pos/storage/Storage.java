@@ -12,15 +12,9 @@ public abstract class Storage {
 		mEntities = new HashMap<String, Entity>();
 	}
 	
-	public boolean contains(String key) {
-		return false;
-	}
+	public abstract boolean contains(String key);
 	
-	public void add(Entity value) {
-		
-	}
+	public abstract void add(Entity value);
 	
-	public Entity get(String key) {
-		return null;
-	}
+	public abstract Entity get(String key);
 }
