@@ -9,7 +9,8 @@ import org.junit.runners.Suite.SuiteClasses;
 		FileInstructionTest.class, OrderTest.class, ProductTest.class,
 		UserTest.class, SalesTest.class, UserStorageTest.class,
 		ProductStorageTest.class, LogTest.class, InteractionInstructionTest.class,
-		POSTest.class})
+		POSTest.class, PasswordCommandTest.class, PaymentCommandTest.class,
+		SpecifyQuantityCommandTest.class})
 public class AllTests {
 	
 }

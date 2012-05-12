@@ -29,4 +29,10 @@ public class PaymentCommand extends Command {
 		}
 	}
 
+	@Override
+	public void addLog() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -32,5 +32,11 @@ public class PasswordCommand extends Command {
 		logger.add("Wrong password " + input + " for user " + username + ", please enter again!");
 	}
 
+	@Override
+	public void addLog() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }

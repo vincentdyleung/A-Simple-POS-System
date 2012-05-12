@@ -41,7 +41,7 @@ public abstract class Command implements CommandBehavior {
 		}
 	}
 
-	public void addLog(){}
+	public abstract void addLog();
 	
 	public String getInput() {
 		return input;

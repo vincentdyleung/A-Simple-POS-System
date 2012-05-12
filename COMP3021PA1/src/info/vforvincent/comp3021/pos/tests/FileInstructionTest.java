@@ -119,5 +119,21 @@ public class FileInstructionTest {
 		e.getMode().process(users, products, input, logger, actualSales);
 		assertTrue(true);
 	}
+	
+	@Test
+	public void testProcess10() {
+		StringReader reader = new StringReader("chunlin\nchunlin\n2\n");
+		Scanner input = new Scanner(reader);
+		e.getMode().process(users, products, input, logger, actualSales);
+		assertTrue(true);
+	}
+	
+	@Test
+	public void testProcess11() {
+		StringReader reader = new StringReader("chunlin\nchunlin\n1\nID001\n311\nID003\n2\nc\n10000\n1\nID002\n2\nID003\n4\nc\n10000\n2");
+		Scanner input = new Scanner(reader);
+		e.getMode().process(users, products, input, logger, actualSales);
+		assertTrue(true);
+	}
 
 }
